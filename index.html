@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#343e43"><title>建設機械パズルゲーム ～重機を育てろ～</title><link rel="stylesheet" href="style.css"><script defer src="data.js"></script><script defer src="missions.js"></script><script defer src="storage.js"></script><script defer src="game.js"></script><script defer src="icons.js"></script><script defer src="motion.js"></script><script defer src="ui.js"></script><script defer src="mission-ui.js"></script></head>
+<body><main><header><span class="eyebrow">CONSTRUCTION PUZZLE</span><h1>建設機械パズルゲーム<span>～重機を育てろ～</span></h1><p>同じ建設アイテムを合体させて、<br>現場を竣工させよう！</p></header>
+<nav class="mode-nav" aria-label="ゲームモード"><button id="normal-mode">通常モード</button><button id="missions-open">ミッション <span id="stars-total">★ 0 / 18</span></button></nav><section id="mission-status" hidden aria-label="ミッション進捗"></section><section class="stats" aria-label="工事の記録"><div><small>工事金額</small><strong id="amount">0万円</strong></div><div><small>最高工事金額</small><strong id="best">0万円</strong></div></section>
+<div class="board-head"><span id="rank"></span><span id="moves"></span></div><div class="board-shell"><div id="combo" role="status" aria-live="polite" hidden></div><div id="board" role="group" aria-label="建設アイテムの盤面。上下左右にスワイプ、または矢印キーで操作"></div></div><div class="direction-pad" aria-label="方向ボタン"><button data-direction="up" aria-label="上へ移動"><svg class="direction-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M3 11h13V4l13 12-13 12v-7H3z"/></svg></button><div><button data-direction="left" aria-label="左へ移動"><svg class="direction-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M3 11h13V4l13 12-13 12v-7H3z"/></svg></button><button data-direction="down" aria-label="下へ移動"><svg class="direction-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M3 11h13V4l13 12-13 12v-7H3z"/></svg></button><button data-direction="right" aria-label="右へ移動"><svg class="direction-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M3 11h13V4l13 12-13 12v-7H3z"/></svg></button></div></div>
+<p id="feedback" role="status" aria-live="polite">スワイプして、最初の合体を目指そう。</p>
+<div class="actions"><button id="undo">一手戻す（あと1回）</button><button id="restart">はじめから</button></div>
+
+<button id="catalog-open" class="catalog-open">重機図鑑 <span id="catalog-count"></span></button><details><summary>遊び方・ランク一覧</summary><p>盤面を上下左右にスワイプ。PCでは矢印キーでも遊べます。同じLvを合わせると次のランクに成長します。1手で生まれたアイテムは、その手では再合体しません。</p><p>同時に2組以上合体するとコンボボーナス！ 竣工を目指して育てましょう。竣工同士は合体できません。</p><p>工事金額はゲーム内スコアです。実際の工事費や重機価格とは関係ありません。</p><p>一手戻すは1ゲームにつき1回。最高工事金額はこのページを開いている間の記録です。</p><ol id="rank-list"></ol></details><footer>画像対応版 · 図鑑の発見記録はこのページ内で保持</footer>
+</main><dialog id="result"><div id="result-body"></div><div id="result-actions"></div></dialog><dialog id="discovery"><div id="discovery-body"></div><div id="discovery-actions"></div></dialog><dialog id="catalog"><h2>重機図鑑 <span id="catalog-total"></span></h2><div id="catalog-grid"></div><button id="catalog-close">ゲームに戻る</button></dialog><dialog id="machine-detail"><div id="detail-body"></div><button id="detail-close">戻る</button></dialog><dialog id="missions-list"><h2>ミッション <span id="list-stars"></span></h2><div id="missions-groups"></div><p id="save-status" role="status"></p><button id="missions-close">ゲームに戻る</button></dialog><dialog id="mission-brief"><div id="brief-body"></div><div id="brief-actions"></div></dialog></body></html>
+
+
+
+
+
+
+
+
